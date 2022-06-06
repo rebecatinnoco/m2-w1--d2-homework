@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>  
+<title>My Second Web Page</title>
+
+<link rel="stylesheet" href="demo.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+       $("#btn").click(function(event){
+        //Add a div element within the body
+        $('body').append('<div id="showinfo"></div>');
+
+        //Add paragraph elements within the div
+        $('#showinfo').append('<caption></caption>');
+        $('#showinfo').append('<thead><tr>');
+        $('#showinfo').append('<th></th>');
+        $('#showinfo').append('<th></th>');
+        $('#showinfo').append('<th></th>');
+        $('#showinfo').append('<th></th>');
+        $('#showinfo').append('<th></th>');
+        $('#showinfo').append('</tr></thead>');
+        $('#showinfo').append('<tbody><tr>');
+        $('#showinfo').append('<td></td>');
+        $('#showinfo').append('<td></td>');
+        $('#showinfo').append('<td></td>');
+        $('#showinfo').append('<td></td>');
+        $('#showinfo').append('<td></td>');
+        $('#showinfo').append('</tr><tr>');
+        $('#showinfo').append('<td></td>');
+        $('#showinfo').append('<td></td>');
+        $('#showinfo').append('<td></td>');
+        $('#showinfo').append('<td></td>');
+        $('#showinfo').append('<td></td>');
+        $('#showinfo').append('</tr><tr>');
+        $('#showinfo').append('<td></td>');
+        $('#showinfo').append('<td></td>');
+        $('#showinfo').append('<td></td>');
+        $('#showinfo').append('<td></td>');
+        $('#showinfo').append('<td></td>');
+        $('#showinfo').append('</tr></tbody></table>');
+
+        //Load data from json file to each paragraphs
+        $.getJSON('data.json', function(jqdata) {
+            $('#showinfo caption').append(jqdata.title);
+            $('#showinfo th:nth-child(3)').append(jqdata.heading);
+            $('#showinfo th:nth-child(4)').append(jqdata.head1);
+            $('#showinfo th:nth-child(5)').append(jqdata.head2);
+            $('#showinfo th:nth-child(6)').append(jqdata.head3);
+            $('#showinfo th:nth-child(7)').append(jqdata.head4);
+            $('#showinfo td:nth-child(9)').append(jqdata.subheadcal);
+            $('#showinfo td:nth-child(10)').append(jqdata.cal1);
+            $('#showinfo td:nth-child(11)').append(jqdata.cal2);
+            $('#showinfo td:nth-child(12)').append(jqdata.cal3);
+            $('#showinfo td:nth-child(13)').append(jqdata.cal4);
+            $('#showinfo td:nth-child(15)').append(jqdata.subheadfat);
+            $('#showinfo td:nth-child(16)').append(jqdata.fat1);
+            $('#showinfo td:nth-child(17)').append(jqdata.fat2);
+            $('#showinfo td:nth-child(18)').append(jqdata.fat3);
+            $('#showinfo td:nth-child(19)').append(jqdata.fat4);
+            $('#showinfo td:nth-child(21)').append(jqdata.subheadven);
+            $('#showinfo td:nth-child(22)').append(jqdata.ven1);
+            $('#showinfo td:nth-child(23)').append(jqdata.ven2);
+            $('#showinfo td:nth-child(24)').append(jqdata.ven3);
+            $('#showinfo td:nth-child(25)').append(jqdata.ven4);
+
+        });
+       });
+    });
+ </script>
+</head> 	
+<body>
+
+<div id="container">
+
+<header>My Web Site Brand</header>
+<nav>
+	<ul>
+    <li><a href="js-demo2.html">Home</a></li>
+    <li><a href="js-demo2b.html">About</a></li>
+    <li><a href="js-demo2d.html">Gallery</a></li>
+    <li><a href="js-demo2c.html">Contact</a></li>
+	</ul>
+</nav>
+
+<main>
+  <h1>My Second Heading</h1>
+  <p>My Second paragraph.</p>
+
+  <table>
+    <!--<caption></caption>
+    <thead>
+        <tr id="showheading">
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr id="showcalories">
+            <td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="showfat">
+            <td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr id="showven">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tfoot>-->
+    </table>
+
+    <input type = "button" id = "btn" value = "Load Data" style="margin-top:20px;" />
+</main>
+
+<footer>&copy; Copyright 2020</footer>
+
+</div>
+
+</body>
+</html>
